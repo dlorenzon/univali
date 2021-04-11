@@ -1,0 +1,263 @@
+Classe <<abstract>> ativo:
+import java.util.date;
+public abstract class Ativo {
+    private String nomeAtivo;
+    private float patrimonio;
+    private String setor;
+    private String gestorAtivo;
+    private date dataDeAquisicao;
+    private float CentroDeCusto;
+    private float manutencaoCorretivaRecente;
+    private String descricaoDoProblema;
+    private boolean ativoObsoleto;
+    
+    // metodos
+    public abstract void ativar();
+    public abstract void inativar();
+    
+    // metodos getters e setters
+
+    public String getGestorAtivo() {
+        return gestorAtivo;
+    }
+
+    public void setGestorAtivo(String gestorAtivo) {
+        this.gestorAtivo = gestorAtivo;
+    }
+
+    public date getDataDeAquisicao() {
+        return dataDeAquisicao;
+    }
+
+    public void setDataDeAquisicao(date dataDeAquisicao) {
+        this.dataDeAquisicao = dataDeAquisicao;
+    }
+    
+    
+
+    public String getNomeAtivo() {
+        return nomeAtivo;
+    }
+
+    public void setNomeAtivo(String nomeAtivo) {
+        this.nomeAtivo = nomeAtivo;
+    }
+
+    public float getPatrimonio() {
+        return patrimonio;
+    }
+
+    public void setPatrimonio(float patrimonio) {
+        this.patrimonio = patrimonio;
+    }
+
+    public String getSetor() {
+        return setor;
+    }
+
+    public void setSetor(String setor) {
+        this.setor = setor;
+    }
+
+    public float getCentroDeCusto() {
+        return CentroDeCusto;
+    }
+
+    public void setCentroDeCusto(float CentroDeCusto) {
+        this.CentroDeCusto = CentroDeCusto;
+    }
+
+    public float getManutencaoCorretivaRecente() {
+        return manutencaoCorretivaRecente;
+    }
+
+    public void setManutencaoCorretivaRecente(float manutencaoCorretivaRecente) {
+        this.manutencaoCorretivaRecente = manutencaoCorretivaRecente;
+    }
+
+    public String getDescricaoDoProblema() {
+        return descricaoDoProblema;
+    }
+
+    public void setDescricaoDoProblema(String descricaoDoProblema) {
+        this.descricaoDoProblema = descricaoDoProblema;
+    }
+
+    public boolean isAtivoObsoleto() {
+        return ativoObsoleto;
+    }
+
+    public void setAtivoObsoleto(boolean ativoObsoleto) {
+        this.ativoObsoleto = ativoObsoleto;
+    }
+    
+}
+
+Solicitante
+
+public class Solicitante {
+    private String nomeSolicitante;
+    private String gestorSolicitante;
+    
+    //getters e setters
+
+    public String getNomeSolicitante() {
+        return nomeSolicitante;
+    }
+
+    public void setNomeSolicitante(String nomeSolicitante) {
+        this.nomeSolicitante = nomeSolicitante;
+    }
+
+    public String getGestorSolicitante() {
+        return gestorSolicitante;
+    }
+
+    public void setGestorSolicitante(String gestorSolicitante) {
+        this.gestorSolicitante = gestorSolicitante;
+    }
+}
+
+AtivoInformatica
+public class AtivoInformatica extends Ativo {
+    private String sistemaOperacional;
+    private String perifericos;
+
+    @Override
+    public void ativar() {
+    }
+
+    @Override
+    public void inativar() {
+    }
+
+public String getSistemaOperacional() {
+        return sistemaOperacional;
+    }
+
+    public void setSistemaOperacional(String sistemaOperacional) {
+        this.sistemaOperacional = sistemaOperacional;
+    }
+
+    public String getPerifericos() {
+        return perifericos;
+    }
+
+    public void setPerifericos(String perifericos) {
+        this.perifericos = perifericos;
+    }
+
+    
+}
+
+
+AtivoMecanico
+public class AtivoMecanico extends Ativo {
+    float potencia;
+    int voltagem;
+    
+    @Override
+    public void ativar() {
+    }
+    
+    @Override
+    public void inativar() {
+    }
+    
+}
+
+
+Manutentor
+
+
+public class Manutentor {
+    String nomeManutentor;
+    String contato;
+    float telefone;
+    String email;
+
+    public String getNomeManutentor() {
+        return nomeManutentor;
+    }
+
+    public String getContato() {
+        return contato;
+    }
+
+    public float getTelefone() {
+        return telefone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+    
+
+OrdemdeServico
+
+
+import java.util.Date;
+
+
+public class OrdemdeServico {
+    float os;
+    Date data; 
+    double custoManutencao;
+    String setor;
+    float centroDeCusto;
+    Date dataManutencaoEntrada;
+    Date dataManutencaoSaida;
+    String nomeManutentor;
+    String peca;
+
+    public float getOs() {
+        return os;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public double getCustoManutencao() {
+        return custoManutencao;
+    }
+
+    public String getSetor() {
+        return setor;
+    }
+
+    public float getCentroDeCusto() {
+        return centroDeCusto;
+    }
+
+    public Date getDataManutencaoEntrada() {
+        return dataManutencaoEntrada;
+    }
+
+    public Date getDataManutencaoSaida() {
+        return dataManutencaoSaida;
+    }
+
+    public String getNomeManutentor() {
+        return nomeManutentor;
+    }
+
+    public String getPeca() {
+        return peca;
+    }
+    
+    public void cadastrar(float os) {
+        this.os = os;
+   }    
+  
+    public void modificar(float os) {
+         // avaliar inserção do codigo para modificação 
+   }
+    
+    public void excluir(float os) {
+        // avaliar inserção do codigo para exclusão 
+   }
+    
+    
+}
+
